@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Canyon Elevation Explorer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Grand Canyon Elevation Explorer</h1>
+    <p>
+      This interactive web map introduces the Grand Canyon through a terrain-focused basemap.
+      Users can zoom, pan, switch map styles, and click the reference point to begin exploring the landscape.
+    </p>
+  </header>
+
+  <main class="content">
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
+
+    <section class="info-panel">
+      <h2>How to use this map</h2>
+      <ul>
+        <li>Drag the map to explore different parts of the canyon.</li>
+        <li>Use the <strong>+</strong> and <strong>-</strong> buttons to zoom in and out.</li>
+        <li>Open the layer control to switch between terrain and street views.</li>
+        <li>Click the marker to view the main reference point.</li>
+      </ul>
+
+      <h2>Data and basemap</h2>
+      <p>
+        This starter version uses online basemaps as the geographic layer for the project.
+        It is designed as the minimum working version for Iteration 1 and can be expanded later
+        with boundaries, viewpoints, trails, or additional elevation-related information.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Created for GEOG 4046 Final Project</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
