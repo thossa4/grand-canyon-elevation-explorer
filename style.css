@@ -134,3 +134,8 @@ body {
     align-items: stretch;
   }
 }
+.site-footer p + p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+}
