@@ -11,30 +11,50 @@
   <header class="site-header">
     <h1>Grand Canyon Elevation Explorer</h1>
     <p>
-      This interactive web map introduces the Grand Canyon through a terrain-focused basemap.
-      Users can zoom, pan, switch map styles, and click the reference point to begin exploring the landscape.
+      This interactive web map helps users examine the Grand Canyon through a terrain-focused basemap,
+      a reference area, and simple map tools. The project is designed to make elevation patterns and
+      landscape structure easier to explore in a browser.
     </p>
   </header>
 
   <main class="content">
     <section class="map-section">
+      <div class="map-toolbar">
+        <button id="reset-view-btn" type="button">Reset to main view</button>
+        <div id="coordinate-box">Click the map to see coordinates.</div>
+      </div>
       <div id="map"></div>
     </section>
 
     <section class="info-panel">
+      <h2>Project purpose</h2>
+      <p>
+        The map is intended for students, visitors, and general users who want a quick visual introduction
+        to the Grand Canyon. It supports basic exploration by showing a terrain-style basemap, a reference
+        marker, and an approximate exploration area.
+      </p>
+
       <h2>How to use this map</h2>
       <ul>
         <li>Drag the map to explore different parts of the canyon.</li>
         <li>Use the <strong>+</strong> and <strong>-</strong> buttons to zoom in and out.</li>
         <li>Open the layer control to switch between terrain and street views.</li>
         <li>Click the marker to view the main reference point.</li>
+        <li>Click anywhere on the map to read latitude and longitude.</li>
+      </ul>
+
+      <h2>Map legend</h2>
+      <ul class="legend-list">
+        <li><span class="legend-swatch terrain"></span> Terrain basemap for elevation-focused viewing</li>
+        <li><span class="legend-swatch boundary"></span> Approximate Grand Canyon exploration area</li>
+        <li><span class="legend-swatch marker"></span> Main reference marker near Grand Canyon Village</li>
       </ul>
 
       <h2>Data and basemap</h2>
       <p>
-        This starter version uses online basemaps as the geographic layer for the project.
-        It is designed as the minimum working version for Iteration 1 and can be expanded later
-        with boundaries, viewpoints, trails, or additional elevation-related information.
+        This version uses online basemaps from OpenTopoMap and OpenStreetMap. It expands the first iteration
+        by improving the explanation, adding a reset-view tool, and allowing users to click the map for
+        coordinates while exploring.
       </p>
     </section>
   </main>

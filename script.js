@@ -1,4 +1,7 @@
-const map = L.map('map').setView([36.1069, -112.1129], 11);
+const initialCenter = [36.1069, -112.1129];
+const initialZoom = 11;
+
+const map = L.map('map').setView(initialCenter, initialZoom);
 
 const terrainLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
   maxZoom: 17,
@@ -15,7 +18,8 @@ terrainLayer.addTo(map);
 const grandCanyonMarker = L.marker([36.0544, -112.1401]).addTo(map);
 grandCanyonMarker.bindPopup(`
   <strong>Grand Canyon Village</strong><br>
-  Use this point as a starting place for exploring the canyon map.
+  Main reference point for this project.<br>
+  Approximate coordinates: 36.0544, -112.1401
 `);
 
 const canyonArea = L.rectangle([
@@ -41,3 +45,21 @@ L.control.layers(
 ).addTo(map);
 
 L.control.scale().addTo(map);
+
+const coordinateBox = document.getElementById('coordinate-box');
+
+map.on('click', function (event) {
+  const lat = event.latlng.lat.toFixed(4);
+  const lng = event.latlng.lng.toFixed(4);
+
+  coordinateBox.textContent = `Selected coordinates: ${lat}, ${lng}`;
+
+  L.popup()
+    .setLatLng(event.latlng)
+    .setContent(`<strong>Selected location</strong><br>Latitude: ${lat}<br>Longitude: ${lng}`)
+    .openOn(map);
+});
+
+document.getElementById('reset-view-btn').addEventListener('click', function () {
+  map.setView(initialCenter, initialZoom);
+});
